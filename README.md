@@ -17,3 +17,4 @@ A simple unfinished turn-based strategic fighter webgame project. All assets mad
 
 
 📎Credits written inside the games code itself📎
+@jahaa023, @Odyi, @OliOSZ
