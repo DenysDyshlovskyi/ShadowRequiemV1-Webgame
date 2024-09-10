@@ -1,0 +1,104 @@
+body {
+  background-color: #bebebe;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  border: 1px solid #000; /* border around the grid */
+  margin: 0 auto; /* center the grid horizontally */
+  max-width: 800px; /* maximum width for the grid */
+}
+
+.grid-item.lock-icon {
+  position: absolute;
+  visibility: hidden;
+}
+
+.grid-item {
+  border: 1px solid #000; /* small border around each element */
+  padding: 10px;
+  text-align: center;
+  max-height: 89.5%;
+  cursor: pointer;
+}
+.grid-item-locked {
+  border: 1px solid #000; /* small border around each element */
+  padding: 10px;
+  text-align: center;
+}
+.grid-item.grid-item-secret {
+  border: 1px solid #000; /* small border around each element */
+  padding: 10px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.grid-item.grid-item-locked {
+  position: relative;
+  cursor: pointer;
+}
+
+.grid-item.grid-item-locked h3 {
+    filter: blur(5px); /* Apply a blur effect to the text */
+}
+
+.lock-icon {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  opacity: 80%;
+}
+
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Pixelart font on all info text like buttons and stats */
+.info-text {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -1px;
+}
+
+/* Back to menu button */
+.back-to-menu {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+}
+
+#back-to-menu-button {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 60px;
+  width: 180px;
+}
+
+#back-to-menu-button:hover {
+  background-color: #45a049;
+}
+
+/* game infobox styling */
+#gameinfo-board {
+  position: fixed;
+  top: 4%;
+  right: 4%;
+}

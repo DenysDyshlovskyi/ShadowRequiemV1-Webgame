@@ -1,0 +1,483 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #bebebe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    overflow-x: hidden
+}
+
+h1 {
+        font-family: "Silkscreen", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+}
+
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.spell-info{
+    color: red;
+}
+
+.health-bar {
+    width: 100px;
+    height: 20px;
+    background-color: #ddd;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.armour-bar {
+    width: 100px;
+    height: 20px;
+    background-color: #ddd;
+    border: 1px solid #333;
+    position: relative;
+}
+
+
+.player-container {
+    display: flex;
+    align-items: flex-end;
+    width: 90%;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+.player{
+    width: 400px;
+}
+
+.enemy {
+    width: 400px;
+}
+
+.enemy img {
+    max-width: 100%;
+    height: auto;
+}
+
+.player img {
+    max-width: 100%;
+    height: auto;
+}
+
+.health-bar.player {
+    background-color: #4CAF50; 
+}
+.armour-bar.player {
+    background-color: #707070; 
+}
+
+.armour-bar.enemy {
+    background-color: #707070; 
+}
+
+
+.health-bar.enemy {
+    background-color: #FF5733; 
+}
+
+button{
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 20px 25px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: all 0.6s ease;
+    cursor: pointer; /* Add cursor pointer for better user experience */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.movelistbutton {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 20px 25px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: all 0.6s ease;
+    cursor: pointer; /* Add cursor pointer for better user experience */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    scale: 1.05;
+}
+
+/*announcement board*/
+#announcement-board {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#message-container {
+    max-height: 160px; /* Adjust height as needed */
+}
+
+#message-container p {
+    margin: 5px 0;
+    font-family: "Silkscreen", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        letter-spacing: -2px;
+}
+
+/* Mana bar styling */
+#mana-container {
+    position: fixed;
+    top: 87%;
+    left: 13%; 
+    width: 20%; 
+    height: 5%;
+    
+}
+
+#mana-bar {
+    position: fixed;
+    top: 90%; /* Distance from top */
+    left: 5%; /* Distance from left */
+    width: 20%; 
+    height: 5%;
+    background-color: #aeaeae;
+    border: 3px solid #af40de;
+}
+
+#mana-level {
+    width: 100%; /* Initially full mana */
+    height: 100%;
+    background-color: #0077ff; /* Mana Colour */
+}
+
+
+
+/* Victory Screen and Restart game */
+.winnerScreen {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 40px;
+    z-index: 999;
+}
+
+.winnerScreen-content {
+    text-align: center;
+}
+
+/* Restart Button Styling and Transformations */
+#restart-button {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 30px 40px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+#restart-button:hover {
+    background-color: #0055cc;
+    color: #f0f0f0;
+    scale: 1.1;
+}
+
+/* Back to menu button */
+.back-to-menu {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+}
+
+#back-to-menu-button {
+    background-color: #4CAF50; /* Green background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 60px;
+    width: 180px;
+}
+
+#back-to-menu-button:hover {
+    background-color: #45a049; /* Darker green when hovering */
+}
+
+.player-message{
+    color: rgb(61, 155, 102);
+}
+.enemy-message{
+    color: rgb(192, 125, 0);
+}
+.event-message{
+    color: red;
+}
+.normal-message{
+    color: black;
+}
+.mana-message{
+    color: #0077ff;
+}
+.health-message{
+    color: rgb(0, 173, 0);
+}
+.armour-message{
+    color: #707070;
+    font-weight:600
+}
+.pierce-message{
+    color: rgb(192, 125, 0);
+    font-weight:600
+}
+.poison-message{
+    color: rgb(112, 176, 0);
+}
+.bleed-message{
+    color: rgb(255, 44, 44);
+}
+
+
+.tutorial-slides {
+    position: relative;
+}
+.tut-slides-styling {
+    display: none;
+}
+
+.custom-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background-color: #4CAF50; /* Green background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 60px;
+    width: 180px;
+}
+
+.custom-button:hover {
+    position: fixed;
+    bottom: 22px;
+    right: 10px;
+    
+    background-color: #008d05; /* Green background color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 60px;
+    width: 180px;
+}
+
+.tutorial-slides img {
+    width: 100%;
+    display: none;
+}
+
+.tutorial-slides img:first-child {
+    display: block;
+}
+
+.enemy-model {
+    transform: scaleX(-1);
+}
+
+#text-box1-ptag {
+    display: block;
+    position: fixed;
+    left: 39%;
+    top: 34%;
+    height: 12%;
+    width: 25%;
+    color: #9b0d00;
+    font-size: 26px;
+    font-family: sans-serif;
+}
+#text-box2-ptag {
+    display: block;
+    position: fixed;
+    left: 39%;
+    top: 31%;
+    
+    height: 12%;
+    width: 25%;
+    color: #9b0d00;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+#text-box3-ptag {
+    display: block;
+    position: fixed;
+    left: 32%;
+    top: 22%;
+    
+    height: 12%;
+    width: 22%;
+    color: #9b0d00;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+#text-box4-ptag {
+    display: block;
+    position: fixed;
+    left: 3%;
+    top: 22%;
+    
+    height: 8%;
+    width: 16%;
+    color: #9b0d00;
+    font-size: 13px;
+    font-family: sans-serif;
+}
+#text-box4-ptag1 {
+    display: block;
+    position: fixed;
+    left: 23.5%;
+    top: 21.5%;
+    
+    height: 8%;
+    width: 16%;
+    color: #9b0d00;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+#text-box4-ptag2 {
+    display: block;
+    position: fixed;
+    left: 42.75%;
+    top: 13.5%;
+    
+    height: 8%;
+    width: 16.90%;
+    color: #9b0d00;
+    font-size: 12.75px;
+    font-family: sans-serif;
+}
+#text-box4-ptag3 {
+    display: block;
+    position: fixed;
+    left: 58.25%;
+    top: 30.5%;
+    
+    height: 8%;
+    width: 16.90%;
+    color: #9b0d00;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+#text-box4-ptag4 {
+    display: block;
+    position: fixed;
+    left: 49%;
+    top: 83.5%;
+    
+    height: 8%;
+    width: 16.5%;
+    color: #9b0d00;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+#text-box4-ptag5 {
+    display: block;
+    position: fixed;
+    left: 68.75%;
+    top: 83.25%;
+    
+    height: 8%;
+    width: 17%;
+    color: #9b0d00;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+#text-box4-ptag6 {
+    display: block;
+    position: fixed;
+    left: 78.10%;
+    top: 30.5%;
+    
+    height: 8%;
+    width: 17%;
+    color: #9b0d00;
+    font-size: 11.4px;
+    font-family: sans-serif;
+}
+#text-box4-ptag7 {
+    display: block;
+    position: fixed;
+    left: 28%;
+    top: 77.5%;
+    
+    height: 12%;
+    width: 18%;
+    color: #9b0d00;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+#text-box5-ptag {
+    display: block;
+    position: fixed;
+    left: 20.60%;
+    top: 24%;
+    height: 9%;
+    width: 18.2%;
+    color: #9b0d00;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+/* Pixelart font on all info text like buttons and stats */
+.info-text {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: -1px;
+}

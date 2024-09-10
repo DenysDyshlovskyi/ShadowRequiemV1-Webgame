@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bebebe;
+}
+
+.menu-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #333333;
+}
+
+/* Pixelart font on all info text like buttons and stats */
+.info-text {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: -1px;
+}
+
+a.info-text{
+    text-decoration: none;
+    color: #007bff;
+    padding: 3% 15%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+li {
+    margin-bottom: 8%;
+    margin-top: 5%;
+}
+
+a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+#gift-input {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+}
+#gift-input input[type="submit"] {
+    height: 35px;
+}
+#gift-input input[type="text"] {
+    height: 30px;
+    width: 290px;
+}
+#gift-input input {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: -1px;
+}
+
+/* Back to login button */
+.back-to-login {
+    position: absolute;
+    top: 4%;
+    left: 2%;
+}
+
+#back-to-login-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 60px;
+    width: 180px;
+}
+
+#back-to-login-button:hover {
+    background-color: #45a049;
+}
